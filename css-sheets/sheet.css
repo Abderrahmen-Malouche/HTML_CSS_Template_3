@@ -53,7 +53,7 @@ a{
   .special-heading{
     text-transform: uppercase;
     margin: 0 auto 80px;
-    border: 3px solid black;
+    border: 4px solid black;
     padding: 10px 20px;
     font-size: 30px;
     width: fit-content;
@@ -61,6 +61,7 @@ a{
     z-index: 1;
     transition: var(--main-transition);
     z-index:1;
+    font-weight:bold;
   }
   .special-heading::before,.special-heading::after{
     content:'';
@@ -265,6 +266,7 @@ max-width:500px;
 .article{
   padding-top:var(--section-padding);
   padding-bottom:var(--section-padding);
+  position:relative;
 }
 .article .container { 
   display:grid;
@@ -366,6 +368,258 @@ max-width:500px;
   transform: rotate(5deg) scale(1.1);
 }
 /* End Gallery */
+/*Begin Features*/
+.features{
+  padding-top:var(--section-padding);
+  padding-bottom:var(--section-padding);
+  position:relative;
+}
+.features .container{
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  gap:40px;
+}
+.features .box {
+  text-align: center;
+  border:1px #ddd solid;
+}
+.features .box .image{
+  position:relative;
+  overflow:hidden;
+}
+.features .box .image::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 100%;
+  height: 100%;
+}
+.features .box .image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0px 0px 170px 500px;
+  border-color: transparent transparent white transparent;
+  transition: var(--main-transition);
+}
+.features .quality .image::before{
+  background-color: rgb(244 64 54 / 60%);
+}
+.features .time .image::before{
+  background-color: rgb(0 150 136 / 60%);
+}
+.features .passion .image::before{
+  background-color: rgb(3 169 244 / 60%);
+}
+.features .box img{
+  max-width:100%;
+}
+.features .box .text h1{
+  margin:auto;
+  font-size:45px;
+  position:relative;
+  width:fit-content;
+}
+.features .box .text h1::after{
+    content:"";
+    position:absolute;
+    bottom:-20px;
+    left:15px;
+    height:5px;
+    width:20px;
+    width:calc(100% - 30px);
+}
+.features .quality .text h1::after{
+  background-color:#f44036;
+}
+.features .time .text h1::after{
+  background-color: #009688;
+}
+.features .passion .text h1::after{
+  background-color: #03a9f4;
+}
+.features .box .text p{
+  font-size:20px;
+  color:#777;
+  padding:15px 25px;
+  line-height: 2;
+}
+.features .box a{
+  font-weight:bold;
+  font-size:30px;
+  color:black;
+  padding:8px 25px;
+  border:4px black solid;
+  width:fit-content;
+  display:block;
+  margin:30px auto;
+  border-radius:10%;
+  transition:var(--main-transition)
+}
+.features .quality a{
+  color: #f44036;
+  border-color: #f44036;
+  background: linear-gradient(to right, #f44036 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+.features .time a{
+  color: #009688;
+  border-color: #009688;
+  background: linear-gradient(to right, #009688 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+.features .passion a{
+  color: #03a9f4;
+  border-color: #03a9f4;
+  background: linear-gradient(to right, #03a9f4 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+.features .box:hover a {
+  background-position: left bottom;
+  color: white;
+}
+.features .box:hover .image::after{
+  border-style: solid;
+  border-width: 0px;
+  transition: var(--main-transition);
+}
+/*End Features*/
+/* Begin Testiomonials */
+.testimonials{
+  padding-top:var(--section-padding);
+  padding-bottom:var(--section-padding);
+  background-color:var(--secondary-background-color);
+}
+.testimonials .container {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:40px;
+}
+.testimonials .box{
+  background-color:white;
+  position:relative;
+  border-radius: 6px;
+  padding:0 20px 15px;
+}
+.testimonials .box img{
+  position:absolute;
+  width:100px;
+  border-radius:50%;
+  right:-10px;
+  top:-50px;
+  border:8px solid var(--secondary-background-color);
+}
+.testimonials .box h3{
+  font-size:25px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+.testimonials .box span{
+  display:block;
+  padding-bottom:10px;
+  font-size:15px;
+  color:var(--main-color);
+}
+.testimonials .box .filled{
+  color: #ffc107;
+}
+.testimonials .box p{
+  line-height:1.5;
+  padding-bottom:5px;
+  color:#858484;
+}
+/* End Testiomonials */
+/*Start  Team */
+.team{
+  padding-top:var(--section-padding);
+  padding-bottom:var(--section-padding);
+  position:relative;
+}
+.team .container {
+  padding-top:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(300px,1fr));
+  column-gap: 40px;
+  row-gap: 90px;
+}
+.team .container .box{
+  position:relative;
+}
+.team .container .box::before{
+  content:'';
+  position:absolute;
+  right:-10px;
+  top:-50px;
+  height:calc(100% + 50px);
+  width:calc(100% - 40px);
+  background-color: #f3f3f3;
+  z-index:-2;
+  border-radius:5%;
+
+}
+.team .container .box::after{
+  width:0;
+  content:'';
+  position:absolute;
+  right:-10px;
+  top:-50px;
+  height:calc(100% + 50px);
+  background-color:#e4e4e4;
+  z-index:-1;
+  border-radius:5%;
+  transition:var(--main-transition);
+}
+.team .container .box:hover::after{
+  width:calc(100% - 40px);
+
+}
+.team  .container .box .upper{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+.team  .container .box .upper .image{
+  flex-basis:85%;
+}
+.team .container .box .upper img{
+  border-radius:10%;
+  max-width: 100%;
+  transition:var(--main-transition);
+}
+.team .box:hover img {
+  filter: grayscale(100%);
+}
+.team .container .box .upper .links{
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  flex-basis:15%;
+  align-items: center;
+}
+.team .container .box .upper .links i{
+  padding:18px;
+  font-size:20px;
+  color:#666;
+}
+.team .container .box .lower{
+  margin-left:70px;
+  padding-bottom:20px;
+}
+.team .container .box .lower h2{
+  color:var(--main-color);
+}
+.team .container .box .lower span{
+  font-size:17px;
+}
+
+
+/*End Team */
 /*Start animation */
 @keyframes up-and-down {
     0%,100%{
@@ -393,7 +647,7 @@ max-width:500px;
   100% {
     right: 0;
     border-radius: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
   }
 }
@@ -406,7 +660,7 @@ max-width:500px;
   100% {
     left: 0;
     border-radius: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
   }
 }
